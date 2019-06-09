@@ -133,10 +133,10 @@ $(function() {
 			contentType : false,
 			success : function(response){
 				$('.progress').hide();
-				if (response == "") {
+				if (response.error || response === '') {
 					alert('File gagal di upload');
 				} else {
-					alert('File berhasil di upload. ID file = ' + response);
+					alert('File berhasil di upload. ID file = ' + response.upload_data.file_name);
 				}
 			}
 		});
